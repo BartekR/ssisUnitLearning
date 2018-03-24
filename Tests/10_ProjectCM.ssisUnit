@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList />
+  <PackageList><Package name="10_ProjectCM" packagePath="10_ProjectCM.dtsx" server="" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="SQL SELECT 1" package="10_ProjectCM" task="{6781FCBA-83D7-45E3-B946-A8894B6BF924}" taskResult="Success"><Assert name="Assert: Returns 1" expectedResult="1" testBefore="false" expression="false"><VariableCommand name="Value" operation="Get" value="" /></Assert></Test><Test name="SQL Get SourceSystemId (Package Scope)" package="10_ProjectCM" task="{CA3E01B3-A958-4A12-81C9-1CB8F40410AF}" taskResult="Success"><Assert name="Assert: SourceSystemId == 2" expectedResult="2" testBefore="false" expression="false"><VariableCommand name="SourceSystemId_Package" operation="Get" value="" /></Assert></Test><Test name="SQL Get SourceSystemId (Container Scope)" package="10_ProjectCM" task="{64643f10-70c3-49e3-85b8-7b3ddebbe377}" taskResult="Success"><Assert name="Assert: SourceSystemId = 2" expectedResult="2" testBefore="false" expression="false"><VariableCommand name="SourceSystemId_ContainerScope" operation="Get" value="" /></Assert></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>

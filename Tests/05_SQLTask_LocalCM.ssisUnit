@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList><Connection name=".\SQL2017.ssisUnitLearningDB" connection="Data Source=.\SQL2017;Initial Catalog=ssisUnitLearningDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" connectionType="ConnectionString" invariantType="" /></ConnectionList>
+  <PackageList><Package name="01_SQLTask_LocalCM" packagePath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\01_SQLTask_LocalCM.dtsx" storageType="FileSystem" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="SQL Load names of the files" package="01_SQLTask_LocalCM" task="{5CE2A937-4575-4196-A64F-3DCC95D1B19E}" taskResult="Success" /><Test name="FELC Load file names" package="01_SQLTask_LocalCM" task="{7B858906-F3AF-4C14-AB8C-56D4028C16A7}" taskResult="Success" /></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>

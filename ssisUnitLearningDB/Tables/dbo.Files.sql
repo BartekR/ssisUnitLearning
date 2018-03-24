@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Files]
+(
+	[Id] SMALLINT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] VARCHAR(128) NULL
+)

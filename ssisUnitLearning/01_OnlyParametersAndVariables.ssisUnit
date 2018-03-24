@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList />
+  <PackageList><Package name="01_OnlyParametersAndVariables" packagePath="01_OnlyParametersAndVariables.dtsx" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="01_OnlyParametersAndVariables" package="01_OnlyParametersAndVariables" task="{5A229C3E-AE1F-48D1-AEF4-0EEB5C9E081E}" taskResult="Success"><Assert name="Assert: PackageParameter == 10" expectedResult="10" testBefore="false" expression="false"><ParameterCommand name="" operation="Get" parameterName="pPackageParameter" parameterType="Package" value="" /></Assert><Assert name="Assert: Sensitive package parameter == 123qwe!@#" expectedResult="123qwe!@#" testBefore="false" expression="false"><ParameterCommand name="" operation="Get" parameterName="pPackageSensitiveParameter" parameterType="Package" value="" /></Assert><Assert name="Assert: Global variable == G10" expectedResult="G10" testBefore="false" expression="false"><VariableCommand name="GlobalVariable" operation="Get" value="" /></Assert><Assert name="Assert: Global variable with expression [1]" expectedResult="E10" testBefore="false" expression="false"><VariableCommand name="GlobalVariableWithExpression" operation="Get" value="" /></Assert><Assert name="Assert: Checking variable with container scope on package level causes failure" expectedResult="42" testBefore="false" expression="false"><VariableCommand name="ContainerVariable" operation="Get" value="" /></Assert></Test><Test name="SEQC Some container" package="01_OnlyParametersAndVariables" task="{E4C43E00-EC90-4C0D-92CB-CC3D5CD44236}" taskResult="Success"><Assert name="Assert: Container Variable == 42" expectedResult="42" testBefore="false" expression="false"><VariableCommand name="ContainerVariable" operation="Get" value="" /></Assert></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>
