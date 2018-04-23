@@ -10,4 +10,5 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
---:r .\SourceSystems.sql
+:r ..\DataScripts\SourceSystems.Data.sql
+:r ..\DataScripts\Packages.Data.sql

@@ -1,6 +1,10 @@
-﻿CREATE TABLE [stg].[Users]
+﻿CREATE TABLE stg.Users
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
-    [Name] VARCHAR(50) NULL, 
-    [Login] CHAR(12) NULL
+	Id INT NOT NULL,
+    Name VARCHAR(50) NULL, 
+    Login CHAR(12) NULL,
+    IsActive BIT NOT NULL CONSTRAINT DF_stg_Users_IsActive DEFAULT 1,
+	SourceSystemId TINYINT NOT NULL,
+	LoadDate DATETIME2(0) NOT NULL CONSTRAINT DF_stg_Users_LoadDate DEFAULT SYSDATETIME(),
+	InsertedAuditId INT NOT NULL
 )

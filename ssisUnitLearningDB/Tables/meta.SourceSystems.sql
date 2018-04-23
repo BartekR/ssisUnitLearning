@@ -1,5 +1,5 @@
-﻿CREATE TABLE [meta].[SourceSystems]
+﻿CREATE TABLE meta.SourceSystems
 (
-	[Id] TINYINT NOT NULL PRIMARY KEY, 
-    [Name] VARCHAR(50) NULL
+	Id TINYINT NOT NULL CONSTRAINT PK_meta_SourceSystems PRIMARY KEY, 
+    Name VARCHAR(50) NULL
 )

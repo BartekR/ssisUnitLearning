@@ -64,6 +64,8 @@
     <Folder Include="Schemas" />
     <Folder Include="Tables" />
     <Folder Include="PostDeployment" />
+    <Folder Include="DataScripts" />
+    <Folder Include="StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas\stg.sql" />
@@ -73,8 +75,14 @@
     <Build Include="Tables\dbo.Files.sql" />
     <PostDeploy Include="PostDeployment\Main.PostDeployment.Dictionaries.sql" />
     <Build Include="Tables\meta.Packages.sql" />
+    <Build Include="Tables\dbo.Users.sql" />
+    <Build Include="Tables\meta.Audit.sql" />
+    <None Include="DataScripts\SourceSystems.Data.sql" />
+    <Build Include="StoredProcedures\meta.uspPackageStart.sql" />
+    <Build Include="StoredProcedures\meta.uspPackageFinish.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ssisUnitLearningDB.publish.xml" />
+    <None Include="ssisUnitLearningDB.BUILD.publish.xml" />
+    <None Include="DataScripts\Packages.Data.sql" />
   </ItemGroup>
 </Project>
