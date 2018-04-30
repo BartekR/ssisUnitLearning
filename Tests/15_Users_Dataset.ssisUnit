@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList><Connection name="ssisUnitLearningDB" connection="Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=ssisUnitLearningDB;Auto Translate=False" connectionType="ConnectionString" invariantType="" /></ConnectionList>
+  <PackageList><Package name="15_Users_Dataset" packagePath="15_Users_Dataset.dtsx" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList><Dataset name="Empty table test: expected dataset" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT *
+FROM (
+    VALUES
+        (CAST('Name 1' AS VARCHAR(50)), CAST('Login 1' AS CHAR(12)), CAST(1 AS BIT), CAST(1 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT)),
+        (CAST('Name 2' AS VARCHAR(50)), CAST('Login 2' AS CHAR(12)), CAST(1 AS BIT), CAST(2 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT)),
+        (CAST('Name 3' AS VARCHAR(50)), CAST('Login 3' AS CHAR(12)), CAST(0 AS BIT), CAST(3 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT))
+)x (Name, Login, IsActive, Id, SourceSystemId, IsDeleted)
+ORDER BY Id;]]></query></Dataset><Dataset name="Empty table test: actual dataset" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT
+    Name,
+    Login,
+    IsActive,
+    SourceId,
+    SourceSystemId,
+    IsDeleted
+FROM dbo.Users
+ ORDER BY SourceId;]]></query></Dataset></DatasetList>
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="SQL MERGE Users: Empty table" package="15_Users_Dataset" task="{FB549B65-6F0D-4794-BA8E-3FF975A6AE0B}" taskResult="Success"><TestSetup><SqlCommand name="SqlCommand: setup stg.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">WITH stgUsers AS (
+SELECT *
+FROM (
+    VALUES
+        ('Name 1', 'Login 1', 1, 1, 2, -1),
+        ('Name 2', 'Login 2', 1, 2, 2, -1),
+        ('Name 3', 'Login 3', 0, 3, 2, -1)
+)x (Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId)
+)
+INSERT INTO stg.Users (
+    Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId
+)
+SELECT
+    Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId
+FROM stgUsers
+;</SqlCommand></TestSetup><Assert name="Assert: Added 3 records" expectedResult="3" testBefore="false" expression="false"><SqlCommand name="" connectionRef="ssisUnitLearningDB" returnsValue="true">SELECT COUNT(*) FROM dbo.Users;</SqlCommand></Assert><Assert name="Assert: dbo.Users has expected records" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="Empty table test: expected dataset" actual="Empty table test: actual dataset" /></Assert><TestTeardown><SqlCommand name="SqlCommand: TRUNCATE stg.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">TRUNCATE TABLE stg.Users;</SqlCommand><SqlCommand name="SqlCommand: TRUNCATE dbo.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">TRUNCATE TABLE dbo.Users;</SqlCommand></TestTeardown></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>
