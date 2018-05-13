@@ -51,6 +51,7 @@ namespace ssisUnitLearningMSTest
 
             testSuite.AssertCompleted -= TestSuiteAssertCompleted;
 
+            Assert.AreEqual<bool>(true, rs, "Package did not execute");
             Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
         }
     }
