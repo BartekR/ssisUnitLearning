@@ -80,6 +80,8 @@
     <None Include="DataScripts\SourceSystems.Data.sql" />
     <Build Include="StoredProcedures\meta.uspPackageStart.sql" />
     <Build Include="StoredProcedures\meta.uspPackageFinish.sql" />
+    <Build Include="Schemas\temp.sql" />
+    <Build Include="Tables\temp.UsersChanged.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ssisUnitLearningDB.BUILD.publish.xml" />

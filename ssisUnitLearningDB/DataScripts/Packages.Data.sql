@@ -2,7 +2,8 @@
 SELECT *
 FROM (VALUES
 	('10_ProjectCM', 2),
-	('15_Users_Dataset', 2)
+	('15_Users_Dataset', 2),
+	('20_DataFlow', 2)
 ) x (Name, SourceSystemId)
 )
 MERGE INTO meta.Packages tgt
