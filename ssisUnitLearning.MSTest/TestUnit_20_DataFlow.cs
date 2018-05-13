@@ -32,7 +32,7 @@ namespace ssisUnitLearningMSTest
                 isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
                 if(e.TestExecResult.TestPassed == false)
                 {
-                    messages.Add(e.AssertName + " failed");
+                    messages.Add(e.AssertName + " failed: " + e.TestExecResult.TestResultMsg);
                 }
             }
         }
