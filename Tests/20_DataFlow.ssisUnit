@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList />
+  <PackageList><Package name="20_DataFlow.dtsx" packagePath="20_DataFlow.dtsx" server="" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="DFT LoadUsers" package="20_DataFlow.dtsx" task="{2A0D497B-E1F3-4BA4-A022-DE538C8B7F30}" taskResult="Success"><Assert name="Assert: Buffer == 100K rows" expectedResult="100000" testBefore="false" expression="false"><PropertyCommand name="" operation="Get" propertyPath="\Package\DFT LoadUsers.Properties[DefaultBufferMaxRows]" value="" /></Assert><Assert name="Assert: DelayValidation id false" expectedResult="False" testBefore="false" expression="false"><PropertyCommand name="" operation="Get" propertyPath="\Package\DFT LoadUsers.Properties[DelayValidation]" value="" /></Assert></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>
