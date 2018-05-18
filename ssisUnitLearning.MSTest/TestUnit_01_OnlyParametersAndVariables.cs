@@ -19,7 +19,7 @@ namespace ssisUnitLearningMSTest
     [TestClass]
     public class TestUnit_01_OnlyParametersAndVariables
     {
-        private SsisTestSuite testSuite;
+        private static SsisTestSuite testSuite;
         private SsisUnitBase.TestResult testResult;
         private Test test;
         private Context context;
@@ -27,6 +27,13 @@ namespace ssisUnitLearningMSTest
         private bool isTestPassed;
 
         private List<string> messages = new List<string>();
+
+        [ClassInitialize]
+        public static void Init(TestContext tc)
+        {
+            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
+            testSuite = new SsisTestSuite(@"..\..\..\Tests\01_OnlyParametersAndVariables.ssisUnit");
+        }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
         {
@@ -44,7 +51,6 @@ namespace ssisUnitLearningMSTest
         [TestMethod]
         public void Test_01_OnlyParametersAndVariables()
         {
-            testSuite = new SsisTestSuite(@"C:\Users\Administrator\source\repos\ssisUnitLearning\Tests\01_OnlyParametersAndVariables.ssisUnit");
             test = testSuite.Tests["01_OnlyParametersAndVariables"];
             context = testSuite.CreateContext();
 
@@ -61,7 +67,6 @@ namespace ssisUnitLearningMSTest
         [TestMethod]
         public void Test_01_OnlyParametersAndVariablesv3()
         {
-            testSuite = new SsisTestSuite(@"C:\Users\Administrator\source\repos\ssisUnitLearning\Tests\01_OnlyParametersAndVariables_v3.ssisUnit");
             test = testSuite.Tests["01_OnlyParametersAndVariables"];
             context = testSuite.CreateContext();
 
@@ -78,7 +83,6 @@ namespace ssisUnitLearningMSTest
         [TestMethod]
         public void Test_SEQC_Some_container()
         {
-            testSuite = new SsisTestSuite(@"C:\Users\Administrator\source\repos\ssisUnitLearning\Tests\01_OnlyParametersAndVariables.ssisUnit");
             test = testSuite.Tests["SEQC Some container"];
             context = testSuite.CreateContext();
 

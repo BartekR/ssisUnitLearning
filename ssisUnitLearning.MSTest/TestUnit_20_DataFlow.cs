@@ -21,7 +21,8 @@ namespace ssisUnitLearningMSTest
         [ClassInitialize]
         public static void Init(TestContext tc)
         {
-            testSuite = new SsisTestSuite(@"C:\Users\Administrator\source\repos\ssisUnitLearning\Tests\20_DataFlow.ssisUnit");
+            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
+            testSuite = new SsisTestSuite(@"..\..\..\Tests\20_DataFlow.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -40,7 +41,6 @@ namespace ssisUnitLearningMSTest
         [TestMethod]
         public void DFT_LoadUsers()
         {
-            //testSuite = new SsisTestSuite(@"C:\Users\Administrator\source\repos\ssisUnitLearning\Tests\01_OnlyParametersAndVariables.ssisUnit");
             test = testSuite.Tests["DFT LoadUsers"];
             context = testSuite.CreateContext();
 
