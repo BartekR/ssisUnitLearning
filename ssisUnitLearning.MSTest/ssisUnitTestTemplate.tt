@@ -1,25 +1,52 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+﻿// the code uses parts of work by Ravi Palihena
+// https://github.com/rarpal/SampleSSISUnit
+// and source code of TestRunnerUI
+<#@ template debug="false" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+
+<#@ import namespace="System.Xml.Linq" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
 <#@ output extension=".cs" #>
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using SsisUnit;
 using SsisUnitBase.EventArgs;
 
-namespace ssisUnitLearningMSTest2
+namespace ssisUnitLearningMSTest
 {
-    [TestClass]
-	public class TestUnit_01_OnlyParametersAndVariables
+<#
+    FileInfo fi = new FileInfo(Host.TemplateFile);
+    string testFolder = fi.Directory.Parent.FullName + @"\Tests";
+    string testFileNameWithoutExtension;
+    string testFileName;
+
+    foreach(string fileName in Directory.GetFiles(testFolder, "*.ssisUnit"))
     {
-        private SsisTestSuite testSuite;
+        testFileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+        testFileName = @"..\..\..\Tests\" + Path.GetFileName(fileName);
+#>
+    [TestClass]
+	public class TestUnit_<#=CleanName(testFileNameWithoutExtension)#>
+    {
+        private static SsisTestSuite testSuite;
         private SsisUnitBase.TestResult testResult;
         private Test test;
         private Context context;
 
         private bool isTestPassed;
+
+        private List<string> messages = new List<string>();
+
+        [ClassInitialize]
+        public static void Init(TestContext tc)
+        {
+            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
+            testSuite = new SsisTestSuite(@"<#=testFileName #>");
+        }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
         {
@@ -27,7 +54,69 @@ namespace ssisUnitLearningMSTest2
             {
                 testResult = e.TestExecResult;
                 isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
+                if (e.TestExecResult.TestPassed == false)
+                {
+                    messages.Add(e.AssertName + " failed");
+                }
             }
         }
-	}
+<#
+        foreach(XElement test in ReadTestFile(fileName))
+        {
+            string testName = test.Attribute(XName.Get("name")).Value;
+            string mstestName = CleanName(testName);
+#>
+        [TestMethod]
+        public void Test_<#=mstestName#>()
+        {
+            test = testSuite.Tests["<#=testName #>"];
+            context = testSuite.CreateContext();
+
+            testSuite.AssertCompleted += TestSuiteAssertCompleted;
+            isTestPassed = true;
+
+            bool rs = test.Execute(context);
+
+            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
+
+            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
+        } // end TestMethod
+
+<#
+        } // end foreach test
+#>
+	}   // end Test
+
+<#
+    } // end foreach fileName
+
+#>
+    
+}   // end namespace
+
+<#+
+private string CleanName(string name)
+{
+    return name.Replace(" ", String.Empty).Replace("-", "_").Replace("(", "_")
+        .Replace(")", "_").Replace(":", "_");
 }
+
+private IEnumerable<XElement> ReadTestFile(string testFilePath)
+{
+    if(String.IsNullOrEmpty(testFilePath))
+    {
+        return new List<XElement>();
+    }
+
+    XDocument ssisunitTest = XDocument.Load(testFilePath);
+    XElement testsElement = ssisunitTest.Root.Element(XName.Get("Tests", "http://tempuri.org/SsisUnit.xsd"));
+
+    if(testsElement == null)
+    {
+        Error("<Tests> node not found in " + testFilePath);
+        return new List<XElement>();
+    }
+
+    return testsElement.Elements();
+}
+#>

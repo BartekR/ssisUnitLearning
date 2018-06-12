@@ -14,11 +14,13 @@ using System.Collections.Generic;
 using SsisUnit;
 using SsisUnitBase.EventArgs;
 
-namespace ssisUnitLearningMSTest
+namespace ssisUnitLearningMSTestExample
 {
     [TestClass]
     public class TestUnit_01_OnlyParametersAndVariables
     {
+        // testSuite has to be static or the error comes out:
+        // An object reference is required for the non-static field, method, or property 'TestUnit_01_OnlyParametersAndVariables.testSuite'	ssisUnitLearning.MSTest C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning.MSTest\TestUnit_01_OnlyParametersAndVariables.cs
         private static SsisTestSuite testSuite;
         private SsisUnitBase.TestResult testResult;
         private Test test;
@@ -29,6 +31,10 @@ namespace ssisUnitLearningMSTest
         private List<string> messages = new List<string>();
 
         [ClassInitialize]
+        // class has to be like in the error message
+        // Message: Method ssisUnitLearningMSTest.TestUnit_01_OnlyParametersAndVariables.Init has wrong signature.
+        // The method must be static, public, does not return a value and should take a single parameter of type TestContext.
+        // Additionally, if you are using async-await in method then return-type must be Task.
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..

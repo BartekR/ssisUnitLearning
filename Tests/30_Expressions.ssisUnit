@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList />
+  <PackageList><Package name="30_Expression.dtsx" packagePath="30_Expression.dtsx" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="Calculate default dates" package="30_Expression.dtsx" task="{60D266F5-02A6-45BF-9F99-EB16DBBB65E2}" taskResult="Success"><Assert name="Assert: When DateFromKey == 0, CalculatedDateFromKey is the first day of the current month" expectedResult="???" testBefore="false" expression="true" /><Assert name="Assert: When DateToKey == 0, CalculatedDateToKey is the last day of the month" expectedResult="???" testBefore="false" expression="true" /></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>

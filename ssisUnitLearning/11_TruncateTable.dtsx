@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="11_TruncateTable"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{6249F38C-318E-4F42-B1E1-5173E61B5740}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{A236E8EB-E52B-4626-99DE-F5BC77A476A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables>
@@ -138,6 +138,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="234,42"
+          Id="Package\SEQC Just the container\SQL Count records after truncate"
+          TopLeft="21.5,209.5" />
+        <NodeLayout
           Size="243,42"
           Id="Package\SEQC Just the container\SQL Count records before truncate"
           TopLeft="17,5.5" />
@@ -145,10 +149,6 @@
           Size="266,42"
           Id="Package\SEQC Just the container\SQL TRUNCATE TABLE TruncateSample"
           TopLeft="5.5,107.5" />
-        <NodeLayout
-          Size="234,42"
-          Id="Package\SEQC Just the container\SQL Count records after truncate"
-          TopLeft="21.5,209.5" />
         <EdgeLayout
           Id="Package\SEQC Just the container.PrecedenceConstraints[Constraint]"
           TopLeft="138.5,47.5">
@@ -196,7 +196,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="277,306"
+          PanelSize="277,307"
           Size="277,350"
           Id="Package\SEQC Just the container"
           TopLeft="5.50000000000006,5.5" />

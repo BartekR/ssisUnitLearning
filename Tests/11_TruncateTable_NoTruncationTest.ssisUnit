@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList>
+    <Connection name="LocalssisUnitLearningDb" connection="Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=ssisUnitLearningDB;Auto Translate=False" connectionType="ConnectionString" invariantType="" />
+  </ConnectionList>
   <PackageList>
     <Package name="11_TruncateTable" packagePath="11_TruncateTable.dtsx" server="" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
   <DatasetList />
   <TestSuiteSetup />
   <Setup />
   <Tests>
-    <Test name="SQL Count records after truncate" package="11_TruncateTable" task="{74ecc732-4bb7-4e92-ae45-18e699b32983}" taskResult="Success"><Assert name="Assert: Table contains 0 rows after truncate" expectedResult="0" testBefore="false" expression="false"><VariableCommand name="AfterTruncate" operation="Get" value="" /></Assert></Test>
-    <Test name="SQL Count records before truncate" package="11_TruncateTable" task="{DD55F2A7-C6D7-4066-837B-FEA006AE949E}" taskResult="Success"><Assert name="Assert: Table contains 5 rows before truncation" expectedResult="5" testBefore="false" expression="false"><VariableCommand name="BeforeTruncate" operation="Get" value="" /></Assert></Test>
-  <Teardown />
+    <Test name="SQL Count records after truncate" package="11_TruncateTable" task="{74ecc732-4bb7-4e92-ae45-18e699b32983}" taskResult="Success">
+      <Assert name="Assert: Table contains 0 rows after truncate" expectedResult="0" testBefore="false" expression="false">
+        <VariableCommand name="AfterTruncate" operation="Get" value="" />
+      </Assert>
+    </Test>
+    <Test name="SQL Count records before truncate" package="11_TruncateTable" task="{DD55F2A7-C6D7-4066-837B-FEA006AE949E}" taskResult="Success">
+      <Assert name="Assert: Table contains 5 rows before truncation" expectedResult="5" testBefore="false" expression="false">
+        <VariableCommand name="BeforeTruncate" operation="Get" value="" />
+      </Assert>
+    </Test>
+  </Tests>
+    <Teardown />
   <TestSuiteTeardown />
 </TestSuite>

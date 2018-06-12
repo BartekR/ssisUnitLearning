@@ -3,7 +3,7 @@ using SsisUnitBase.EventArgs;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ssisUnitLearningMSTest
+namespace ssisUnitLearningMSTestExample
 {
     [TestClass]
     public class TestUnit_20_DataFlow
