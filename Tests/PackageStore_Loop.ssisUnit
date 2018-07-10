@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList><Connection name="ssisUnitLearningDB" connection="Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=ssisUnitLearningDB;Auto Translate=False" connectionType="ConnectionString" invariantType="" /></ConnectionList>
+  <PackageList><Package name="60_Loops" packagePath="\MSDB\ssisUnitLearning\60_Loops" server="WIN-28NP3IUBEQ6" storageType="PackageStore" /></PackageList>
+  <DatasetList />
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="Test1" package="60_Loops" task="{5941A168-3E59-4A09-89D0-4B3025A0F871}" taskResult="Success"><Assert name="Assert1" expectedResult="42" testBefore="false" expression="false"><VariableCommand name="v" operation="Get" value="" /></Assert></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>

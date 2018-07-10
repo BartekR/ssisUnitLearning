@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList><Connection name="ssisUnitLearningDB" connection="Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=ssisUnitLearningDB;Auto Translate=False" connectionType="ConnectionString" invariantType="" /></ConnectionList>
+  <PackageList><Package name="15_Users_Dataset" packagePath="15_Users_Dataset.dtsx" server=".\SQL2017" projectPath="ssisUnit\ssisUnitLearning" storageType="SsisCatalog" /></PackageList>
+  <DatasetList><Dataset name="Empty table test: expected dataset" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT *
+FROM (
+    VALUES
+        (CAST('Name 1' AS VARCHAR(50)), CAST('Login 1' AS CHAR(12)), CAST(1 AS BIT), CAST(1 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT)),
+        (CAST('Name 2' AS VARCHAR(50)), CAST('Login 2' AS CHAR(12)), CAST(1 AS BIT), CAST(2 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT)),
+        (CAST('Name 3' AS VARCHAR(50)), CAST('Login 3' AS CHAR(12)), CAST(0 AS BIT), CAST(3 AS INT), CAST(2 AS TINYINT), CAST(0 AS BIT))
+)x (Name, Login, IsActive, Id, SourceSystemId, IsDeleted)
+ORDER BY Id;]]></query></Dataset><Dataset name="Empty table test: actual dataset" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT
+    Name,
+    Login,
+    IsActive,
+    Id = SourceId,
+    SourceSystemId,
+    IsDeleted
+FROM dbo.Users
+ ORDER BY SourceId;]]></query></Dataset><Dataset name="Empty table test: expected dataset, persisted" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="50" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Login" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="12" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="IsActive" type="xs:int" minOccurs="0" />
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="SourceSystemId" type="xs:int" minOccurs="0" />
+                <xs:element name="IsDeleted" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Name>Name 1</Name>
+    <Login>Login 1</Login>
+    <IsActive>1</IsActive>
+    <Id>1</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>0</IsDeleted>
+  </Results>
+  <Results>
+    <Name>Name 2</Name>
+    <Login>Login 2</Login>
+    <IsActive>1</IsActive>
+    <Id>2</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>0</IsDeleted>
+  </Results>
+  <Results>
+    <Name>Name 3</Name>
+    <Login>Login 3</Login>
+    <IsActive>0</IsActive>
+    <Id>3</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>0</IsDeleted>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="TestDataset: NameColumn (expected)" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT *
+FROM (
+    VALUES
+        (CAST('Name 1' AS VARCHAR(50))),
+        (CAST('Name 2' AS VARCHAR(50))),
+        (CAST('Name 3' AS VARCHAR(50)))
+)x (Name)
+ORDER BY Name;]]></query></Dataset><Dataset name="TestDataset: NameColumn (actual)" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT Name FROM dbo.users ORDER BY Name;]]></query></Dataset><Dataset name="TestDataset: NameColumn (expected, persisted, the same Query)" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[SELECT *
+FROM (
+    VALUES
+        (CAST('Name 1' AS VARCHAR(50))),
+        (CAST('Name 2' AS VARCHAR(50))),
+        (CAST('Name 3' AS VARCHAR(50)))
+)x (Name)
+ORDER BY Name;]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="50" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Name>Name 1</Name>
+  </Results>
+  <Results>
+    <Name>Name 2</Name>
+  </Results>
+  <Results>
+    <Name>Name 3</Name>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="TestDataset: NameColumn (expected, persisted, no Query)" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="50" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Name>Name 1</Name>
+  </Results>
+  <Results>
+    <Name>Name 2</Name>
+  </Results>
+  <Results>
+    <Name>Name 3</Name>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="TestDataset: LoginColumn (expected)" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT *
+FROM (
+    VALUES
+        (CAST('Login 1' AS CHAR(12))),
+        (CAST('Login 2' AS CHAR(12))),
+        (CAST('Login 3' AS CHAR(12)))
+)x (Login)
+ORDER BY Login;]]></query></Dataset><Dataset name="TestDataset: LoginColumn (expected, persisted)" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Login" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="12" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Login>Login 1</Login>
+  </Results>
+  <Results>
+    <Login>Login 2</Login>
+  </Results>
+  <Results>
+    <Login>Login 3</Login>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="TestDataset: LoginColumn (actual)" connection="ssisUnitLearningDB" isResultsStored="false"><query><![CDATA[SELECT Login FROM dbo.Users ORDER BY Login;]]></query></Dataset><Dataset name="TestDataset: LoginColumn (expected, persisted, no length)" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Login" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Login>Login 1</Login>
+  </Results>
+  <Results>
+    <Login>Login 2</Login>
+  </Results>
+  <Results>
+    <Login>Login 3</Login>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="TestDataset: LoginColumn (expected, persisted, padded)" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Login" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Login>Login 1     </Login>
+  </Results>
+  <Results>
+    <Login>Login 2     </Login>
+  </Results>
+  <Results>
+    <Login>Login 3     </Login>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="Empty table test: expected dataset, persisted, padded" connection="ssisUnitLearningDB" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="50" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Login" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="12" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="IsActive" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="SourceSystemId" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="IsDeleted" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Name>Name 1</Name>
+    <Login>Login 1     </Login>
+    <IsActive>true</IsActive>
+    <Id>1</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>false</IsDeleted>
+  </Results>
+  <Results>
+    <Name>Name 2</Name>
+    <Login>Login 2     </Login>
+    <IsActive>true</IsActive>
+    <Id>2</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>false</IsDeleted>
+  </Results>
+  <Results>
+    <Name>Name 3</Name>
+    <Login>Login 3     </Login>
+    <IsActive>false</IsActive>
+    <Id>3</Id>
+    <SourceSystemId>2</SourceSystemId>
+    <IsDeleted>false</IsDeleted>
+  </Results>
+</NewDataSet>]]></results></Dataset></DatasetList>
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="SQL MERGE Users: Empty table" package="15_Users_Dataset" task="{FB549B65-6F0D-4794-BA8E-3FF975A6AE0B}" taskResult="Success"><TestSetup><SqlCommand name="SqlCommand: setup stg.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">WITH stgUsers AS (
+SELECT *
+FROM (
+    VALUES
+        ('Name 1', 'Login 1', 1, 1, 2, -1),
+        ('Name 2', 'Login 2', 1, 2, 2, -1),
+        ('Name 3', 'Login 3', 0, 3, 2, -1)
+)x (Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId)
+)
+INSERT INTO stg.Users (
+    Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId
+)
+SELECT
+    Name, Login, IsActive, Id, SourceSystemId, InsertedAuditId
+FROM stgUsers
+;</SqlCommand></TestSetup><Assert name="Assert: Added 3 records" expectedResult="3" testBefore="false" expression="false"><SqlCommand name="" connectionRef="ssisUnitLearningDB" returnsValue="true">SELECT COUNT(*) FROM dbo.Users;</SqlCommand></Assert><Assert name="Assert: dbo.Users has expected records" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="Empty table test: expected dataset" actual="Empty table test: actual dataset" /></Assert><Assert name="Assert: dbo.Users has expected records (persisted)" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="Empty table test: expected dataset, persisted" actual="Empty table test: actual dataset" /></Assert><Assert name="Assert: NameColumn expected == NameColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: NameColumn (actual)" actual="TestDataset: NameColumn (expected)" /></Assert><Assert name="Assert: NameColumn expected, persisted, the same Query == NameColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: NameColumn (actual)" actual="TestDataset: NameColumn (expected, persisted, the same Query)" /></Assert><Assert name="Assert: NameColumn expected, persisted, no Query == NameColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: NameColumn (actual)" actual="TestDataset: NameColumn (expected, persisted, no Query)" /></Assert><Assert name="Assert: LoginColumn expected == LoginColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: LoginColumn (actual)" actual="TestDataset: LoginColumn (expected)" /></Assert><Assert name="Assert: LoginColumn expected, persisted == LoginColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: LoginColumn (actual)" actual="TestDataset: LoginColumn (expected, persisted)" /></Assert><Assert name="Assert: LoginColumn expected, persisted, no Length == LoginColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="Empty table test: actual dataset" actual="TestDataset: LoginColumn (expected, persisted, no length)" /></Assert><Assert name="Assert: LoginColumn expected, persisted, padded == LoginColumn actual" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="TestDataset: LoginColumn (actual)" actual="TestDataset: LoginColumn (expected, persisted, padded)" /></Assert><Assert name="Assert: dbo.Users has expected records (persisted, padded)" expectedResult="True" testBefore="false" expression="false"><DataCompareCommand name="" expected="Empty table test: actual dataset" actual="Empty table test: expected dataset, persisted, padded" /></Assert><TestTeardown><SqlCommand name="SqlCommand: TRUNCATE stg.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">TRUNCATE TABLE stg.Users;</SqlCommand><SqlCommand name="SqlCommand: TRUNCATE dbo.Users" connectionRef="ssisUnitLearningDB" returnsValue="false">--TRUNCATE TABLE dbo.Users;</SqlCommand></TestTeardown></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>
