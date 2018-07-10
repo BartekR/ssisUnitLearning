@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DeploymentModel>Project</DeploymentModel>
-  <ProductVersion>14.0.800.98</ProductVersion>
+  <ProductVersion>14.0.800.90</ProductVersion>
   <SchemaVersion>9.0.1.0</SchemaVersion>
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <Database>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">WIN-28NP3IUBEQ6</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA79V0c6dB0EqdO9f+7n2gKgAAAAACAAAAAAAQZgAAAAEAACAAAAB6RhBRuhJbVOuWzt7XCgVOdcjodfiPMKIedmmHlb0IwwAAAAAOgAAAAAIAACAAAADt0jlVkyrwnPJMF8UJRaJVCsmRFNFtGF0XIGZBkX/rhZAAAACERYmRj5ga1MVZi03rXQ2FsxOJ8S52+iybRPm6ozTXPb6UPVw3qP7zcOausH9dzFAyAFU8yWf8cps3jIy2phl/qrlNiijbR1+jWIkGvVcql6uBbauCiz7c4c5A9mGAI5NUH3aIls1EqnkbgAjkdGVsE2lIdyvyiv7xmtABaE6e5nhWIforLio717FuKJzcX3VAAAAA6plwqMqxcRGqsgbyzbBsEwG9wfW9UyzQcGAelbYMKcV9qOSIiJRVU7lnHYUSvimvnILmZw2my0GRvlYtBvF/eA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAl6Ud+pH2skKA/X/GnrMdWgAAAAACAAAAAAAQZgAAAAEAACAAAADl1FnejAngo2QQx7aC6QZHCSzDGLB9FY6ZLXPJ6T9VxQAAAAAOgAAAAAIAACAAAAB9evHbAJ9bQnmANPywzoZdoPexr7T/dHCKS9GUPM2icZAAAAAhhjlsbmy4JnVDD48O5SMY9dXR4ObqePH0FFVKbZgIz8zWDmbeb0Z2mOcEwkQZvjurXZWwGZCHCkyQCvvWr2V2wCkkqxCOpLGxrCtZCzaBypdng6WjzwViDRVjhcnfAtFG8g9CAihMkKHNY7PsKwq+I6OSBbRHwP28jQNgUBo2jX+kO5uF05jwEcbnISm6DflAAAAAgtWf7sJptD7GHlIvaXxudYJ/E6V8bu+Q4NaoA55o5raJ4oJGxnziBKmaCg2YHBoxU9sKn0w013Ea79N1XvvSQA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -37,6 +37,7 @@
           <SSIS:Package SSIS:Name="15_Users_Dataset.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="20_DataFlow.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="30_Expression.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="60_Loops.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="ssisUnitLearningDB.conmgr" />
@@ -307,7 +308,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA79V0c6dB0EqdO9f+7n2gKgAAAAACAAAAAAAQZgAAAAEAACAAAACaSMc632WCeWpKqIlqW9h30360rhHVj0SzEQ35d/YGLwAAAAAOgAAAAAIAACAAAACEZvusFS8/g6CrpnIkhhIJdud1d/ktHpXTyIROcJ+zUYAAAACszaAE0e9SPCH6Vjs7eziqqO93vww9gtGaTaYfGLe/8t9bfHZwLSB8zyoK08fjUhd/MmWLHRviz1KyfhudaV4tfIAoSrDglVcStJEfWEFTY/IaFKUvRDVlPwNrpGpJHmTdRvbD8f6PvouF6o/yBQwig4qxp+iWqoI5xwtFRGPHNUAAAAAzkSpfMC1lXVTpF3KBYA5vhtq6wrULR4ybdtwB1VBpwdXZNHfsY86O5yQfp3ZxvbTGm5DVVMorqBRa6tPgdZ9y</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -424,6 +424,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="60_Loops.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{DC50199E-6666-4F4A-BBAC-D18B1F6188DD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">60_Loops</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7EA5D971-C62E-4700-A32A-1ED95A3C1B6E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
