@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ssisUnitLearningDB", "ssisU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ssisUnitLearning.MSTest", "ssisUnitLearning.MSTest\ssisUnitLearning.MSTest.csproj", "{DD1004FC-E78D-47CB-AA1B-CB10D3C472A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ssisUnitLearning.API", "ssisUnitLearning.API\ssisUnitLearning.API.csproj", "{A30FA92A-8D03-485C-8B8B-58A2925000E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,12 @@ Global
 		{DD1004FC-E78D-47CB-AA1B-CB10D3C472A4}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{DD1004FC-E78D-47CB-AA1B-CB10D3C472A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD1004FC-E78D-47CB-AA1B-CB10D3C472A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30FA92A-8D03-485C-8B8B-58A2925000E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
