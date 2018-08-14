@@ -45,7 +45,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"<#=testFileName #>");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"<#=testFileName #>");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)

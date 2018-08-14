@@ -26,137 +26,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\01_OnlyParametersAndVariables.ssisUnit");
-        }
-
-        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
-        {
-            if(e.AssertName != null)
-            {
-                testResult = e.TestExecResult;
-                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
-                if (e.TestExecResult.TestPassed == false)
-                {
-                    messages.Add(e.AssertName + " failed");
-                }
-            }
-        }
-        [TestMethod]
-        public void Test_01_OnlyParametersAndVariables()
-        {
-            test = testSuite.Tests["01_OnlyParametersAndVariables"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-        [TestMethod]
-        public void Test_SEQCSomecontainer()
-        {
-            test = testSuite.Tests["SEQC Some container"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-	}   // end Test
-
-    [TestClass]
-	public class TestUnit_01_OnlyParametersAndVariables_v2
-    {
-        private static SsisTestSuite testSuite;
-        private SsisUnitBase.TestResult testResult;
-        private Test test;
-        private Context context;
-
-        private bool isTestPassed;
-
-        private List<string> messages = new List<string>();
-
-        [ClassInitialize]
-        public static void Init(TestContext tc)
-        {
-            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\01_OnlyParametersAndVariables_v2.ssisUnit");
-        }
-
-        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
-        {
-            if(e.AssertName != null)
-            {
-                testResult = e.TestExecResult;
-                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
-                if (e.TestExecResult.TestPassed == false)
-                {
-                    messages.Add(e.AssertName + " failed");
-                }
-            }
-        }
-        [TestMethod]
-        public void Test_01_OnlyParametersAndVariables()
-        {
-            test = testSuite.Tests["01_OnlyParametersAndVariables"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-        [TestMethod]
-        public void Test_SEQCSomecontainer()
-        {
-            test = testSuite.Tests["SEQC Some container"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-	}   // end Test
-
-    [TestClass]
-	public class TestUnit_01_OnlyParametersAndVariables_v3
-    {
-        private static SsisTestSuite testSuite;
-        private SsisUnitBase.TestResult testResult;
-        private Test test;
-        private Context context;
-
-        private bool isTestPassed;
-
-        private List<string> messages = new List<string>();
-
-        [ClassInitialize]
-        public static void Init(TestContext tc)
-        {
-            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\01_OnlyParametersAndVariables_v3.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\01_OnlyParametersAndVariables.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -221,7 +92,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\05_SQLTask_LocalCM.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\05_SQLTask_LocalCM.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -286,7 +158,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\10_ProjectCM.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\10_ProjectCM.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -367,7 +240,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\11_TruncateTable.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\11_TruncateTable.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -448,7 +322,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\11_TruncateTable_NoTruncationTest.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\11_TruncateTable_NoTruncationTest.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -498,55 +373,6 @@ namespace ssisUnitLearningMSTest
 	}   // end Test
 
     [TestClass]
-	public class TestUnit_15_Users_Dataset_Copy
-    {
-        private static SsisTestSuite testSuite;
-        private SsisUnitBase.TestResult testResult;
-        private Test test;
-        private Context context;
-
-        private bool isTestPassed;
-
-        private List<string> messages = new List<string>();
-
-        [ClassInitialize]
-        public static void Init(TestContext tc)
-        {
-            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset - Copy.ssisUnit");
-        }
-
-        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
-        {
-            if(e.AssertName != null)
-            {
-                testResult = e.TestExecResult;
-                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
-                if (e.TestExecResult.TestPassed == false)
-                {
-                    messages.Add(e.AssertName + " failed");
-                }
-            }
-        }
-        [TestMethod]
-        public void Test_SQLMERGEUsers_Emptytable()
-        {
-            test = testSuite.Tests["SQL MERGE Users: Empty table"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-	}   // end Test
-
-    [TestClass]
 	public class TestUnit_15_Users_Dataset
     {
         private static SsisTestSuite testSuite;
@@ -562,153 +388,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset.ssisUnit");
-        }
-
-        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
-        {
-            if(e.AssertName != null)
-            {
-                testResult = e.TestExecResult;
-                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
-                if (e.TestExecResult.TestPassed == false)
-                {
-                    messages.Add(e.AssertName + " failed");
-                }
-            }
-        }
-        [TestMethod]
-        public void Test_SQLMERGEUsers_Emptytable()
-        {
-            test = testSuite.Tests["SQL MERGE Users: Empty table"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-	}   // end Test
-
-    [TestClass]
-	public class TestUnit_15_Users_Dataset_2
-    {
-        private static SsisTestSuite testSuite;
-        private SsisUnitBase.TestResult testResult;
-        private Test test;
-        private Context context;
-
-        private bool isTestPassed;
-
-        private List<string> messages = new List<string>();
-
-        [ClassInitialize]
-        public static void Init(TestContext tc)
-        {
-            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset_2.ssisUnit");
-        }
-
-        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
-        {
-            if(e.AssertName != null)
-            {
-                testResult = e.TestExecResult;
-                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
-                if (e.TestExecResult.TestPassed == false)
-                {
-                    messages.Add(e.AssertName + " failed");
-                }
-            }
-        }
-        [TestMethod]
-        public void Test_15_Users_Dataset()
-        {
-            test = testSuite.Tests["15_Users_Dataset"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-        [TestMethod]
-        public void Test_SQLMERGEUsers()
-        {
-            test = testSuite.Tests["SQL MERGE Users"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-        [TestMethod]
-        public void Test_SQLuspPackageFinish()
-        {
-            test = testSuite.Tests["SQL uspPackageFinish"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-        [TestMethod]
-        public void Test_SQLuspPackageStart()
-        {
-            test = testSuite.Tests["SQL uspPackageStart"];
-            context = testSuite.CreateContext();
-
-            testSuite.AssertCompleted += TestSuiteAssertCompleted;
-            isTestPassed = true;
-
-            bool rs = test.Execute(context);
-
-            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
-
-            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
-        } // end TestMethod
-
-	}   // end Test
-
-    [TestClass]
-	public class TestUnit_15_Users_Dataset_Persisted_Copy
-    {
-        private static SsisTestSuite testSuite;
-        private SsisUnitBase.TestResult testResult;
-        private Test test;
-        private Context context;
-
-        private bool isTestPassed;
-
-        private List<string> messages = new List<string>();
-
-        [ClassInitialize]
-        public static void Init(TestContext tc)
-        {
-            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset_Persisted - Copy.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -757,7 +438,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset_Persisted.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\15_Users_Dataset_Persisted.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -806,7 +488,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\20_DataFlow.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\20_DataFlow.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -855,7 +538,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\30_Expressions.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\30_Expressions.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -889,6 +573,72 @@ namespace ssisUnitLearningMSTest
 	}   // end Test
 
     [TestClass]
+	public class TestUnit_60_Loops
+    {
+        private static SsisTestSuite testSuite;
+        private SsisUnitBase.TestResult testResult;
+        private Test test;
+        private Context context;
+
+        private bool isTestPassed;
+
+        private List<string> messages = new List<string>();
+
+        [ClassInitialize]
+        public static void Init(TestContext tc)
+        {
+            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\60_Loops.ssisUnit");
+        }
+
+        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
+        {
+            if(e.AssertName != null)
+            {
+                testResult = e.TestExecResult;
+                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
+                if (e.TestExecResult.TestPassed == false)
+                {
+                    messages.Add(e.AssertName + " failed");
+                }
+            }
+        }
+        [TestMethod]
+        public void Test_FLCEvaluateexpression()
+        {
+            test = testSuite.Tests["FLC Evaluate expression"];
+            context = testSuite.CreateContext();
+
+            testSuite.AssertCompleted += TestSuiteAssertCompleted;
+            isTestPassed = true;
+
+            bool rs = test.Execute(context);
+
+            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
+
+            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
+        } // end TestMethod
+
+        [TestMethod]
+        public void Test_EXPRAdd6()
+        {
+            test = testSuite.Tests["EXPR Add 6"];
+            context = testSuite.CreateContext();
+
+            testSuite.AssertCompleted += TestSuiteAssertCompleted;
+            isTestPassed = true;
+
+            bool rs = test.Execute(context);
+
+            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
+
+            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
+        } // end TestMethod
+
+	}   // end Test
+
+    [TestClass]
 	public class TestUnit_Empty
     {
         private static SsisTestSuite testSuite;
@@ -904,7 +654,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\Empty.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\Empty.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -922,7 +673,7 @@ namespace ssisUnitLearningMSTest
 	}   // end Test
 
     [TestClass]
-	public class TestUnit_Empty2
+	public class TestUnit_MSDB_Loop
     {
         private static SsisTestSuite testSuite;
         private SsisUnitBase.TestResult testResult;
@@ -937,7 +688,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\Empty2.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\MSDB_Loop.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -971,7 +723,7 @@ namespace ssisUnitLearningMSTest
 	}   // end Test
 
     [TestClass]
-	public class TestUnit_FirstTest
+	public class TestUnit_PackageStore_Loop
     {
         private static SsisTestSuite testSuite;
         private SsisUnitBase.TestResult testResult;
@@ -986,7 +738,8 @@ namespace ssisUnitLearningMSTest
         public static void Init(TestContext tc)
         {
             // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
-            testSuite = new SsisTestSuite(@"..\..\..\Tests\FirstTest.ssisUnit");
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\PackageStore_Loop.ssisUnit");
         }
 
         private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
@@ -1002,9 +755,59 @@ namespace ssisUnitLearningMSTest
             }
         }
         [TestMethod]
-        public void Test_01_OnlyParametersAndVariables()
+        public void Test_Test1()
         {
-            test = testSuite.Tests["01_OnlyParametersAndVariables"];
+            test = testSuite.Tests["Test1"];
+            context = testSuite.CreateContext();
+
+            testSuite.AssertCompleted += TestSuiteAssertCompleted;
+            isTestPassed = true;
+
+            bool rs = test.Execute(context);
+
+            testSuite.AssertCompleted -= TestSuiteAssertCompleted;
+
+            Assert.AreEqual<bool>(true, isTestPassed, System.String.Join(";", messages));
+        } // end TestMethod
+
+	}   // end Test
+
+    [TestClass]
+	public class TestUnit_SSISCatalog_Dataset
+    {
+        private static SsisTestSuite testSuite;
+        private SsisUnitBase.TestResult testResult;
+        private Test test;
+        private Context context;
+
+        private bool isTestPassed;
+
+        private List<string> messages = new List<string>();
+
+        [ClassInitialize]
+        public static void Init(TestContext tc)
+        {
+            // ssisUnitLearningMSTest.dll is in subfolder bin\Debug and Tests folder is parallel, that's why ..\..\..
+            //System.Console.WriteLine(System.Environment.CurrentDirectory);
+			testSuite = new SsisTestSuite(@"..\..\..\Tests\SSISCatalog_Dataset.ssisUnit");
+        }
+
+        private void TestSuiteAssertCompleted(object sender, AssertCompletedEventArgs e)
+        {
+            if(e.AssertName != null)
+            {
+                testResult = e.TestExecResult;
+                isTestPassed = isTestPassed & e.TestExecResult.TestPassed;
+                if (e.TestExecResult.TestPassed == false)
+                {
+                    messages.Add(e.AssertName + " failed");
+                }
+            }
+        }
+        [TestMethod]
+        public void Test_SQLMERGEUsers_Emptytable()
+        {
+            test = testSuite.Tests["SQL MERGE Users: Empty table"];
             context = testSuite.CreateContext();
 
             testSuite.AssertCompleted += TestSuiteAssertCompleted;
