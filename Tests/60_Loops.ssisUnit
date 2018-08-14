@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
   <ConnectionList />
-  <PackageList><Package name="60_Loops" packagePath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\60_Loops.dtsx" server="" storageType="FileSystem" /></PackageList>
+  <PackageList><Package name="60_Loops" packagePath="C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\60_Loops.dtsx" storageType="FileSystem" /></PackageList>
   <DatasetList />
   <TestSuiteSetup />
   <Setup />
-  <Tests><Test name="FLC Evaluate expression" package="60_Loops" task="{0BA2E7A0-50E8-4567-82DB-B6C59731555D}" taskResult="Success"><Assert name="Assert: Result after the loop should be 42" expectedResult="42" testBefore="false" expression="false"><VariableCommand name="v" operation="Get" value="" /></Assert></Test><Test name="EXPR Add 6" package="60_Loops" task="{5941A168-3E59-4A09-89D0-4B3025A0F871}" taskResult="Success"><Assert name="Assert: Result of the expression is 6" expectedResult="6" testBefore="false" expression="false"><VariableCommand name="v" operation="Get" value="" /></Assert></Test></Tests>
+  <Tests><Test name="FLC Evaluate expression" package="60_Loops" task="{51810FFA-DD3E-4D2A-B3A6-02FBF9879785}" taskResult="Success"><Assert name="Assert: Result after the loop should be 42" expectedResult="42" testBefore="false" expression="false"><VariableCommand name="v" operation="Get" value="" /></Assert></Test><Test name="EXPR Add 6" package="60_Loops" task="{7DEDD722-D2F2-47C1-843F-87404D19B534}" taskResult="Success"><Assert name="Assert: Result of the expression is 6" expectedResult="6" testBefore="false" expression="false"><VariableCommand name="v" operation="Get" value="" /></Assert></Test></Tests>
   <Teardown />
   <TestSuiteTeardown />
 </TestSuite>
