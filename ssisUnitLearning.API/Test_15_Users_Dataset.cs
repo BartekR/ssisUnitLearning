@@ -15,10 +15,10 @@ namespace ssisUnitLearning.API
             // a new test suite
             SsisTestSuite ts = new SsisTestSuite();
 
-            // the package to test
+            // the package to test; three times .., because test dll is in .\bin\Development
             PackageRef p = new PackageRef(
                 "15_Users_Dataset",
-                @"C:\Users\Administrator\source\repos\ssisUnitLearning\ssisUnitLearning\bin\Development\ssisUnitLearning.ispac",
+                @"..\..\..\Assets\ispac\ssisUnitLearning.ispac",
                 "15_Users_Dataset.dtsx",
                 PackageStorageType.FileSystem
             );
