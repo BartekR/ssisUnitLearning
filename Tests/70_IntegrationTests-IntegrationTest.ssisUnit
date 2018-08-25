@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestSuite xmlns="http://tempuri.org/SsisUnit.xsd">
+  <ConnectionList><Connection name="ssisUnitLearningDb" connection="Provider=SQLNCLI11.1;Data Source=.\SQL2017;Integrated Security=SSPI;Initial Catalog=ssisUnitLearningDB;Auto Translate=False" connectionType="ConnectionString" invariantType="" /></ConnectionList>
+  <PackageList><Package name="70_IntegrationTest" packagePath="70_IntegrationTest.dtsx" projectPath="C:\Users\Administrator\source\repos\ssisUnitLearning\Assets\ispac\ssisUnitLearning.ispac" storageType="FileSystem" /></PackageList>
+  <DatasetList><Dataset name="Expected dataset" connection="ssisUnitLearningDb" isResultsStored="true"><query><![CDATA[--]]></query><results><![CDATA[<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Results" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="10" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Value" type="xs:short" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Results>
+    <Name>Name1</Name>
+    <Value>34</Value>
+  </Results>
+  <Results>
+    <Name>Name2</Name>
+    <Value>54</Value>
+  </Results>
+  <Results>
+    <Name>Name3</Name>
+    <Value>74</Value>
+  </Results>
+  <Results>
+    <Name>Name4</Name>
+    <Value>94</Value>
+  </Results>
+  <Results>
+    <Name>Name5</Name>
+    <Value>114</Value>
+  </Results>
+</NewDataSet>]]></results></Dataset><Dataset name="Actual dataset" connection="ssisUnitLearningDb" isResultsStored="false"><query><![CDATA[SELECT Name, Value FROM stg.FileValues]]></query></Dataset></DatasetList>
+  <TestSuiteSetup />
+  <Setup />
+  <Tests><Test name="70_IntegrationTest" package="70_IntegrationTest" task="{84254C71-7F7A-4CC1-AFBC-EE8348C2A80B}" taskResult="Success"><Assert name="Assert: stg.FileValues table holds expected values" expectedResult="true" testBefore="false" expression="false"><DataCompareCommand name="" expected="Expected dataset" actual="Actual dataset" /></Assert></Test></Tests>
+  <Teardown />
+  <TestSuiteTeardown />
+</TestSuite>
