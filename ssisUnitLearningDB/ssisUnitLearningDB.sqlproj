@@ -82,9 +82,13 @@
     <Build Include="StoredProcedures\meta.uspPackageFinish.sql" />
     <Build Include="Schemas\temp.sql" />
     <Build Include="Tables\temp.UsersChanged.sql" />
+    <Build Include="Tables\stg.FileValues.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ssisUnitLearningDB.BUILD.publish.xml" />
     <None Include="DataScripts\Packages.Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ssisUnitLearningDB.refactorlog" />
   </ItemGroup>
 </Project>
